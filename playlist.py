@@ -21,6 +21,17 @@ def add_song():
 
     songs.append(song)
     print("Đã thêm bài hát vào playlist.")
+
+def view_playlist():
+    print("\n--- DANH SÁCH PHÁT ---")
+
+    if not songs:
+        print("Playlist hiện đang trống.")
+        return
+
+    for index, song in enumerate(songs, start=1):
+        print(f"{index}. {song['title']} - {song['artist']} ({song['duration']}s)")
+
 def main():
     while True:
         print("\n--- MUSIC PLAYLIST MANAGER ---")
@@ -34,7 +45,7 @@ def main():
         if choice == '1':
             add_song()
         elif choice == '2':
-            print("Tính năng xem playlist sẽ làm ở bước 4")
+            view_playlist()
         elif choice == '3':
             print("Tính năng tìm ca sĩ sẽ làm ở bước 5")
         elif choice == '4':
